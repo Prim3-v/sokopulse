@@ -13,7 +13,44 @@
   </header>
 
   <main>
-    <p id="status">Loading...</p>
+    <section class="card">
+      <h2>Market Price Board</h2>
+      <div class="filters">
+        <input type="text" id="search" placeholder="Search crop (e.g. tomato)" />
+        <select id="marketFilter">
+          <option value="all">All markets</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Crop</th>
+              <th>Market</th>
+              <th>Price (KES/kg)</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody id="priceBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Add a Price</h2>
+      <form id="priceForm">
+        <input type="text" id="crop" placeholder="Crop" required />
+        <input type="text" id="market" placeholder="Market" required />
+        <input type="number" id="price" placeholder="Price per kg" min="1" required />
+        <select id="trend">
+          <option value="up">Rising ▲</option>
+          <option value="down">Falling ▼</option>
+          <option value="steady">Steady ●</option>
+        </select>
+        <button type="submit">Add Price</button>
+      </form>
+    </section>
   </main>
 
   <script src="js/app.js"></script>
